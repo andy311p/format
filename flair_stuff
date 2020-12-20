@@ -1,0 +1,37 @@
+
+##########Batch inference example###########################
+class FlairTrainedModels:
+    __flair_trained_model = None
+    @classmethod
+    def get_flair_trained_model(cls):
+        if cls.__flair_trained_model is None:
+            cls.__flair_trained_model = SequenceTagger.load('best-model.pt')
+        return cls.__flair_trained_model
+class FlairModelPrediciton:
+    def __init__(self):
+        self.model = FlairTrainedModels.get_flair_trained_model()
+    def flair_inference(self, metadata_sentences):
+        flair_ner_results = []
+        metadata_sentences = [Sentence(sent) for sent in metadata_sentences]
+        self.model.predict(metadata_sentences, mini_batch_size=64)
+        for sente in metadata_sentences:
+            model_result = sente.to_dict(tag_type='ner')
+            flair_ner_results.append(model_result)
+        return flair_ner_results
+        
+################ In the same post there is the following response
+##I found out that if I don't manually clear the embedding, the object persists in GC and cause OOM.
+def forward(self, tokens: List[List]) -> torch.Tensor:
+        length = max([len(line.split()) for line in tokens])
+        sents_flairs = [Sentence(sentence, use_tokenizer=False) for sentence in tokens]
+        FlairTokenEmbedder.bert_embedding.embed(sents_flairs)
+        self.hidden_dim = sents_flairs[0].tokens[0].embedding.shape[0]
+        embedding = torch.zeros((len(tokens), length, self.hidden_dim), device=self.device)
+        for i in range(len(tokens)):
+            for j, token in enumerate(sents_flairs[i]):
+                embedding[i, j, :] = token.embedding.clone()
+        for sent in sents_flairs:
+            for token in sent:
+                token.clear_embeddings() # Without this, there will be an OOM issue
+        return embedding
+##Is this an expected behaviour or is a bug?
