@@ -1,10 +1,14 @@
 Looks promising:
 https://github.com/MaartenGr/BERTopic
-https://github.com/DARIAH-DE/Topics
+https://github.com/MilaNLProc/contextualized-topic-models
 https://github.com/RaRe-Technologies/gensim
 https://github.com/vi3k6i5/GuidedLDA
 
 Maybe worth checking:
-https://github.com/MilaNLProc/contextualized-topic-models
+https://github.com/DARIAH-DE/Topics
 https://github.com/bab2min/tomotopy
 https://github.com/ddangelov/Top2Vec
+
+
+Datasets:
+20newsgroups - 18K on 20 topics
