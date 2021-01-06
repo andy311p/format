@@ -6,3 +6,6 @@ https://github.com/mpariente/asteroid#available-recipes
 
 https://github.com/JusperLee/UtterancePIT-Speech-Separation
 [conv-tasnet] and [dual-path-RNN] showed best results in https://www.likai.show/Pure-Audio/index.html
+
+Facebooks unknown number of speakers separation:
+https://github.com/facebookresearch/svoice
