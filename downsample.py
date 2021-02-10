@@ -1,5 +1,6 @@
 from pydub import AudioSegment as am
 import librosa
+#important to [pip install librosa==0.7.2] version for librosa.output
 
 output_dir = "/data/"
 
