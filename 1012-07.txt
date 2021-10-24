@@ -1,0 +1,66 @@
+Hi,
+Thank you for your request to download the Color FERET face image database.
+We've created a Color FERET database download account for you. This is an
+automated reply.
+
+The database is in a 'tar' archive of approximately 8.5 gigabytes.
+
+If your computer has the "wget" program, downloading is likely as easy
+as executing the command:
+	wget -4 -v --auth-no-challenge https://u2101207:Ov3Dj0Xr69@nigos.nist.gov/colorferet/colorferet.tar
+
+Other computers, including Apple's macOS, may have the "curl" program,
+in which case downloading is as easy as executing the command:
+	curl -4 -o colorferet.tar https://u2101207:Ov3Dj0Xr69@nigos.nist.gov/colorferet/colorferet.tar
+
+If your computer has neither program, you might be able to download the
+database with a simple cut-and-paste of the URL into your browser's
+Address Bar:
+	https://u2101207:Ov3Dj0Xr69@nigos.nist.gov/colorferet/colorferet.tar
+(Whether that works depends on your browser and how it's configured. If
+it doesn't work, you'll need to search for a program for your operating
+system that can download a URL.
+
+
+
+If you wish to verify that the database was downloaded correctly,
+download its corresponding MD5 checksum file, and use it to verify
+the 'tar' archive, e.g.:
+	wget -4 -v --auth-no-challenge https://u2101207:Ov3Dj0Xr69@nigos.nist.gov/colorferet/colorferet.tar.md5
+	md5sum --check < colorferet.tar.md5
+
+If you get an error when downloading, try from different computer, on
+a different network if possible. NIST has no ability to diagnose failed
+downloads.
+
+
+
+Once downloaded, you can extract the database files the 'tar' archive
+with the command:
+	tar -xf colorferet.tar
+
+The face image (including thumbnail image) files have names of the form:
+	*.ppm.bz2
+The '.bz2' extension indicates they've been compressed with the bzip2
+program:
+	https://en.wikipedia.org/wiki/Bzip2
+and they can be decompressed using the bunzip2 program, e.g.:
+	bunzip2 *.ppm.bz2
+
+The resulting files will have the '.ppm' extension, which indicates
+they are in the 'Portable Pixmap' format:
+	https://en.wikipedia.org/wiki/Netpbm
+
+
+
+The 'tar' archive contains the original (grayscale) FERET database,
+under the 'colorferet/dvd2' subdirectory.
+
+The download account will be deleted automatically after 14 days.
+
+Information about the database can be found at:
+	https://www.nist.gov/programs-projects/face-recognition-technology-feret
+
+Thanks,
+   -- The NIST Color FERET Team
+
