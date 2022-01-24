@@ -1,3 +1,9 @@
+Fr´echet Audio Distance: A Metric for Evaluating Music Enhancement Algorithms (FAD is a metric similar to FID in images but works on audio. this is a very interesting 
+and similar to my work concept)
+Towards Accurate Generative Models of Video: A New Metric & Challenges (FVD - same metric but for videos)
+GANs Trained by a Two Time-Scale Update Rule Converge to a Local Nash Equilibrium (FID)
+Low-latency real-time non-parallel voice conversion based on cyclic variational autoencoder and multiband WaveRNN with data-driven linear prediction (LGD metric)
+
 Looks promising:
 https://github.com/MaartenGr/BERTopic
 https://github.com/MilaNLProc/contextualized-topic-models
